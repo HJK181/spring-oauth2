@@ -1,0 +1,27 @@
+zuul:
+  routes:
+    resource:
+      url: http://localhost:8085
+    resource2:
+      url: http://localhost:8086
+    uaa:
+      path: /uaa/**
+      url: http://localhost:9191
+      strip-prefix: false
+  sensitiveHeaders: Cookie,Set-Cookie
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-value: S3nd
+
+    client:
+      accessTokenUri: http://localhost:9191/uaa/oauth/token
+      userAuthorizationUri: http://localhost:9191/uaa/oauth/authorize
+      clientId: web
+      clientSecret: secret
+      grant-type: authorization_code
+
+logging:
+  level:
+    org.springframework.security: DEBUG

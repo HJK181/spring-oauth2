@@ -1,0 +1,24 @@
+server:
+  port: 9191
+  servlet:
+    context-path: /uaa
+    
+security:
+  oauth2:
+    client:
+      client-id: uaa-service
+      client-secret: secret
+      accessTokenUri: http://localhost:9191/uaa/oauth/token
+      userAuthorizationUri: http://localhost:9191/uaa/oauth/authorize
+      grant-type: client_credentials
+    resource:
+      jwt:
+        key-value: S3cret
+      
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+logging:
+  level:
+    org.springframework.security: DEBUG

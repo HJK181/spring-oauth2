@@ -1,0 +1,23 @@
+server:
+  port: 8086
+security:
+  oauth2:
+    client:
+      client-id: resources2
+      grant-type: client_credentials
+    resource:
+      jwt:
+        keyValue: S3nd 
+
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@192.168.192.133:1521:hamed
+    username: test
+    password: test
+  jpa:
+    show-sql: true
+
+logging:
+  level:
+    org.springframework.security: DEBUG
