@@ -36,7 +36,7 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .mvcMatchers("/uaa/**", "/login","/favicon.ico","/error**").permitAll()
+				.mvcMatchers("/uaa/oauth/**", "/login", "/favicon.ico", "/error**").permitAll()
                 .anyRequest().authenticated()
             .and()
                 .logout()
