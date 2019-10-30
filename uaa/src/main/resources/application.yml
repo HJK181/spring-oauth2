@@ -7,9 +7,9 @@ security:
   oauth2:
     client:
       client-id: uaa-service
-      client-secret: secret
-      accessTokenUri: http://localhost:9191/uaa/oauth/token
-      userAuthorizationUri: http://localhost:9191/uaa/oauth/authorize
+#      client-secret: secret
+#      accessTokenUri: http://localhost:9191/uaa/oauth/token
+#      userAuthorizationUri: http://localhost:9191/uaa/oauth/authorize
       grant-type: client_credentials
     resource:
       jwt:
